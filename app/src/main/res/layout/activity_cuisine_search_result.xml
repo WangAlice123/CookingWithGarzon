@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/activity_cuisine_search_result"
+    tools:context="ca.uottawa.cookingwithgarzon.CuisineSearchResultActivity">
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/cuisineSearchCreateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:srcCompat="@drawable/ic_add_black_24dp"
+        app:layout_anchorGravity="top|right"
+        android:layout_gravity="top|right" />
+        <!--app:layout_anchor="@id/app_bar"-->
+        <!--app:layout_anchorGravity="bottom|end"-->
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listview_cuisines" />
+
+</android.support.design.widget.CoordinatorLayout>

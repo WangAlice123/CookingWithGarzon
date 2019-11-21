@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_create_or_edit_recipe"
+    android:fitsSystemWindows="true"
+    tools:context="ca.uottawa.cookingwithgarzon.CreateOrEditRecipeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:clickable="true"
+                    app:fabSize="mini"
+                    app:srcCompat="@android:drawable/ic_menu_help"
+                    android:id="@+id/helpBtn"
+                    app:backgroundTint="@android:color/holo_blue_light"
+                    android:forceHasOverlappingRendering="false"
+                    app:layout_anchor="@+id/app_bar"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:layout_anchorGravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/createRecipeTitleTxt"
+                    android:textStyle="normal|italic"
+                    android:hint="Enter recipe title"
+                    android:layout_weight="1"
+                    android:textAlignment="center" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:layout_anchor="@id/app_bar"
+                    app:layout_anchorGravity="bottom|end"
+                    app:srcCompat="@drawable/ic_done_black_24dp"
+                    app:backgroundTint="@android:color/holo_blue_bright"
+                    android:id="@+id/addRecipeBtn"
+                    android:layout_width="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    app:srcCompat="@drawable/ic_image_black_36dp"
+                    android:id="@+id/createRecipeImage"
+                    android:layout_weight="1"
+                    android:layout_width="250dp"
+                    android:layout_height="125dp"
+                    android:onClick="takeImageFromCamera"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:id="@+id/createRecipeRating"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:stepSize="1"
+                        android:scaleX=".7"
+                        android:scaleY=".7" />
+
+                    <Spinner
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:prompt="@string/difficulty_prompt"
+                        android:id="@+id/createRecipeDifficultySpinner"
+                        android:alwaysDrawnWithCache="false"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp" />
+
+                    <Switch
+                        android:text="Favourite            "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/favouritesSwitch"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="40dp"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="Meal Type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mealTitle"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/createRecipeMealTypeTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="24sp"
+                        android:textAlignment="center"
+                        android:hint="@string/meal_type_prompt" />
+
+                    <TextView
+                        android:text="Serving Size:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/servingTitle"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:layout_marginTop="10dp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:id="@+id/createRecipeServingTxt"
+                        android:hint="Input Serving Size"
+                        android:textAlignment="center"
+                        android:ems="10"
+                        android:textSize="20sp"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="Cuisine Type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cusineTitle"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/createRecipeCuisineTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="24sp"
+                        android:textAlignment="center"
+                        android:hint="@string/cuisine_type_prompt" />
+
+                    <TextView
+                        android:text="Total Cost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/costTitle"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:text="Calculation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/createRecipeCostTxt"
+                        android:layout_weight="21.06"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.03">
+
+                    <TextView
+                        android:text="Ingredients"
+                        android:layout_height="match_parent"
+                        android:id="@+id/createRecipeIngredientTitle"
+                        android:textSize="24sp"
+                        android:gravity="left|center"
+                        android:paddingLeft="10dp"
+                        android:layout_width="160dp" />
+
+                    <Button
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/createRecipeAddIngredientBtn"
+                        android:background="@drawable/ic_add_black_24dp"
+                        android:layout_weight="0.00" />
+                </LinearLayout>
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp" >
+
+            <ca.uottawa.cookingwithgarzon.NestedListView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:dividerHeight="1dp"
+                android:id="@+id/createRecipeIngredientList" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.12"
+                android:weightSum="1">
+
+                <TextView
+                    android:text="Instructions"
+                    android:layout_height="match_parent"
+                    android:id="@+id/createRecipeInstructionTitle"
+                    android:layout_weight="0.12"
+                    android:textSize="24sp"
+                    android:paddingLeft="10dp"
+                    android:gravity="left|center"
+                    android:layout_width="140dp" />
+
+                <Button
+                    android:layout_width="49dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/createRecipeAddStepBtn"
+                    android:background="@drawable/ic_add_black_24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp" >
+
+            <ca.uottawa.cookingwithgarzon.NestedListView
+                android:id="@+id/createRecipeStepList"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:paddingBottom="10dp"
+                android:paddingTop="5dp" /><![CDATA[
+
+            android:cacheColorHint="#00000000" />
+        ]]>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="69dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
